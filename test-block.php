@@ -27,8 +27,16 @@ add_action( 'init', function() {
 		$asset_file['version']
 	);
 
+	wp_register_script(
+		'mkaz-test-block-client-asset',
+		plugins_url( 'view.js', __FILE__ )
+	);
+
 	register_block_type( 'mkaz/test-block', array(
 		'editor_script' => 'mkaz-test-block-script',
+		'render_callback' => function() {
+			wp_enqueue_script( 'mkaz-test-block-client-asset' );
+		}
 	) );
 
 } );
