@@ -34,9 +34,9 @@ add_action( 'init', function() {
 
 	register_block_type( 'mkaz/test-block', array(
 		'editor_script' => 'mkaz-test-block-script',
-		'render_callback' => function( $attribs ) {
+		'render_callback' => function( $attribs, $content ) {
 			wp_enqueue_script( 'mkaz-test-block-client-asset' );
-			return "<p>Hola Mundo</p>";
+			return $content;
 		}
 	) );
 
