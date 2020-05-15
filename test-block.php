@@ -15,20 +15,14 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Register the things.
  */
-add_action( 'init', function() {
+add_action( 'enqueue_block_editor_assets', function() {
 
-	// automatically load dependencies and version
-	$asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
-
-	wp_register_script(
+	wp_enqueue_script(
 		'mkaz-test-block-script',
-		plugins_url( 'build/index.js', __FILE__ ),
-		$asset_file['dependencies'],
-		$asset_file['version']
+		plugins_url( 'test.js', __FILE__ ),
+		array( 'wp-hooks' )
 	);
 
-	register_block_type( 'mkaz/test-block', array(
-		'editor_script' => 'mkaz-test-block-script',
-	) );
-
 } );
+
+
