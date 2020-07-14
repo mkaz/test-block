@@ -16,7 +16,7 @@
 
 	hooks.addFilter(
 		'blocks.getSaveContent.extraProps',
-		'mkaz/test-blocl',
+		'mkaz/test-block',
 		addMyAttributes
 	);
 	} )( window.wp.hooks );
