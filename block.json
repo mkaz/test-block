@@ -1,0 +1,16 @@
+{
+    "apiVersion": 2,
+    "name": "mkaz/test-block",
+    "title": "Test Block",
+    "category": "widgets",
+    "icon": "smiley",
+    "description": "Just. a. test.",
+    "supports": {
+        "color": {
+			"text": true,
+			"link": true
+		}
+    },
+    "textdomain": "mkaz",
+    "editorScript": "file:./test-block.js"
+}
