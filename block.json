@@ -12,5 +12,7 @@
 		}
     },
     "textdomain": "mkaz",
-    "editorScript": "file:./test-block.js"
+    "editorScript": "file:./test-block.js",
+	"editorStyle": "file:./editor.css",
+	"style": "file:./style.css"
 }

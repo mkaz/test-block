@@ -1,39 +1,29 @@
-/**
- * WordPress dependencies
- */
-const { registerBlockType } = wp.blocks;
-const el = wp.element.createElement;
+( function( wp ) {
 
-let metadata = {
-    "apiVersion": 2,
-    "name": "mkaz/test-block",
-    "title": "Test Block",
-    "category": "widgets",
-    "icon": "smiley",
-    "description": "Just. a. test.",
-    "supports": {
-        "color": {
-			"text": true,
-			"link": true,
-		}
-    },
-    "textdomain": "mkaz",
-    "editorScript": "file:./test-block.js",
-};
+	const { registerBlockType } = wp.blocks;
+	const el = wp.element.createElement;
 
-registerBlockType( metadata, {
-	edit: ( { className } ) => {
-		return el(
-			'div',
-			{ className: className },
-			'Hello World'
-		)
-	},
-	save: ( { className } ) => {
-		return el(
-			'div',
-			{ className: className },
-			'Hello World'
-		)
-	},
-} );
+	registerBlockType( 'mkaz/test-block', {
+
+		title: 'Test Block',
+		icon: 'smiley',
+		category: 'widget',
+
+		edit: ( { className } ) => {
+			return el(
+				'div',
+				{ className: className },
+				'Hello World'
+			)
+		},
+
+		save: ( { className } ) => {
+			return el(
+				'div',
+				{ className: className },
+				'Hello World'
+			)
+		},
+	} );
+
+}( window.wp ) );
