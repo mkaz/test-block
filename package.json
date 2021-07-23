@@ -1,7 +1,7 @@
 {
-	"name": "gutenpride",
+	"name": "test-block",
 	"version": "0.1.0",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"description": "Block used for testing.",
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
