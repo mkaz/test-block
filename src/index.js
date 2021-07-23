@@ -10,7 +10,8 @@ registerBlockType( 'mkaz/test-block', {
 	attributes: {
 		content: {
 			type: 'string',
-			default: 'some random value',
+			source: 'html',
+			selector: 'div',
 		},
 	},
     deprecated: [
@@ -18,10 +19,15 @@ registerBlockType( 'mkaz/test-block', {
 			attributes: {
                 text: {
                     type: 'string',
-                    default: 'some random value',
-                },
+					source: 'html',
+					selector: 'p',
+				},
             },
- 
+			migrate: ( attributes ) => {
+				return {
+					content: attributes.text
+				}
+			},
             save( props ) {
                 return <p>{ props.attributes.text }</p>;
             },
@@ -29,7 +35,7 @@ registerBlockType( 'mkaz/test-block', {
     ],
 
 	edit: ( props ) => {
-		return <div> Placeholder </div>
+		return <div>{props.attributes.content}</div>
 	},
 	save: ( props ) => {
 		return <div>{ props.attributes.content }</div>

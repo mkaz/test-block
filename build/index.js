@@ -113,22 +113,29 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])('mka
   attributes: {
     content: {
       type: 'string',
-      default: 'some random value'
+      source: 'html',
+      selector: 'div'
     }
   },
   deprecated: [{
     attributes: {
       text: {
         type: 'string',
-        default: 'some random value'
+        source: 'html',
+        selector: 'p'
       }
+    },
+    migrate: function migrate(attributes) {
+      return {
+        content: attributes.text
+      };
     },
     save: function save(props) {
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, props.attributes.text);
     }
   }],
   edit: function edit(props) {
-    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, " Placeholder ");
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, props.attributes.content);
   },
   save: function save(props) {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, props.attributes.content);
