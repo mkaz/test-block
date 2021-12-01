@@ -5,5 +5,6 @@
 	"icon": "smiley",
 	"description": "Just a test",
 	"textdomain": "test-block",
-	"editorScript": "file:./build/index.js"
+	"editorScript": "file:./build/index.js",
+	"viewScript": "file:./test.js"
 }
